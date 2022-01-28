@@ -1,1 +1,13 @@
 # sock-shop
+-created a Virtual machine on microsoft azure since my system is not up to 4 GB RAM to run the service using ip 20.126.50.129
+- installed minikube
+-installed kubectl
+- cloned the microservice demo repository uisng git clone https://github.com/microservices-demo/microservices-demo into cd microservices-demo
+-after login to the server,i ran minikube start
+- sudo sysctl -w vm.max_map_count=262144
+- kubectl create -f deploy/kubernetes/manifests-logging to build the container registries
+- to deploy the sock-shop, executed kubectl create -f deploy/kubernetes/manifests/sock-shop-ns.yaml -f deploy/kubernetes/manifests
+-then, executed kubectl create -f deploy/kubernetes/manifests/sock-shop-ns.yaml -f deploy/kubernetes/manifests for the pods to be built
+- then executed  kubectl get pods --namespace="sock-shop"
+- kubectl get pod --all-namespaces executed all the name spaces and the time it was established
+- kubectl get deployment -o wide -n sock-shop executed the name of the deployments,images of each deployments and the date deployment was updated 
